@@ -28,4 +28,7 @@ router.get('/detail', function (req, res, next) {
     res.render('detail');
 });
 
+router.get('/api/store',function (req, res) {
+    res.end();
+});
 
