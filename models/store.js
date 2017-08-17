@@ -7,7 +7,11 @@ var Schema = mongoose.Schema;
 var storeSchema = new Schema({
     id: Number,
     title: String,
-    phoneNum : String
+    phoneNum : String,
+    startTime : String,
+    endTime : String,
+    isDelivery : Boolean,
+    address : String,
 });
 
 module.exports = mongoose.model('store', storeSchema);
