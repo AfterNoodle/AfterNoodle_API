@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title></title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+    .category {
+        width: 300px;
+        line-height: 150px;
+        display: block;
+        margin: 4px;
+        text-align: center;
+        float: left;
+        margin-left: 50px;
+        margin-right: 50px;
+        background: #ffd5c4;
+    }
+    #list {
+        margin-left: 10%;
+        margin-right: 10$;
+    }
+</style>
+<body>
+
+<div>
+
+    <div id="header">
+        <% include header.ejs %>
+    </div>
+
+    <div id="categoryBar">
+        <% include categoryFood.ejs %>
+    </div>
+
+    <div id="list">
+    <a href="/detail"><div class="category"><%= category %></div></a>
+    <a href="/detail"><div class="category">리스트2</div></a>
+    <a href="/detail"><div class="category">리스트3</div></a>
+    <a href="/detail"><div class="category">리스트4</div></a>
+    <br>
+    <a href="/detail"><div class="category">리스트5</div></a>
+    <a href="/detail"><div class="category">리스트6</div></a>
+    <a href="/detail"><div class="category">리스트7</div></a>
+    <a href="/detail"><div class="category">리스트8</div></a>
+
+    </div>
+
+
+
+</div>
+
+</body>
+
+</html>

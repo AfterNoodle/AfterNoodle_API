@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title></title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+
+<div>
+
+    <div id="header">
+        <% include header.ejs%>
+    </div>
+
+    <div id="categoryBar">
+        <% include categoryFood.ejs%>
+    </div>
+
+    <div id="detail">
+
+        <div id="storeInfo" style="border: solid gray 1px; height: 50px;">
+            <div id="title" style="float: left; margin-right: 10px;">
+                <h1>title</h1>
+            </div>
+            <div id="detailStore">
+                <span>address1 address2 address3-addr4</span>
+                <span>좋아하는 사람 </span> &#x1f497; <span>명</span>
+                <span style="float: right;">
+                <label>배달가능</label>
+                <label>휴대폰결제</label>
+                <label>직접수령가능</label>
+            </span>
+            </div>
+
+
+        </div>
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">추천메뉴</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+
+                            크림어니언<br>
+                            허니머스타드<br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">전체메뉴</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                        불닭볶음면<br>
+                        족발<br>
+                        치킨<br>
+                        파스타<br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">사이드메뉴</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        소주<br>
+                        맥주<br>
+                        막걸리<br>
+                        와인<br>
+                        버드와이저<br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+</body>
+
+</html>
