@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AfterNoodles</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+    .category {
+        width: 20%;
+        line-height: 150px;
+        display: block;
+        margin: 4px;
+        text-align: center;
+        float: left;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        background: #ffd5c4;
+    }
+    #list {
+        margin-top: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+</style>
+<body>
+
+<div id="header">
+    <% include header.ejs%>
+</div>
+
+<div id="bigCategory">
+
+    <div id="list">
+        <a href="/searchList?category=korean"><div class="category">한식</div></a>
+        <a href="/searchList?category=china"><div class="category">중식</div></a>
+        <a href="/searchList?category=western"><div class="category">양식</div></a>
+        <a href="/searchList?category=chicken"><div class="category">치킨</div></a>
+        <br>
+        <a href="/searchList?category=night"><div class="category">야식</div></a>
+        <a href="/searchList?category=cafe"><div class="category">카페</div></a>
+        <a href="/searchList?category=drink"><div class="category">술집</div></a>
+        <a href="/random"><div class="category">랜덤</div></a>
+
+    </div>
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var header = res.header;
+        var category = res.category;
+
+        alert(category);
+
+        $("#header").load(header);
+        $("#categoryBar").load(category);
+
+    });
+</script>
+</html>
