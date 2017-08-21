@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 
 var storeSchema = new Schema({
     id: Number,
+    category: String,
     title: String,
     phoneNum : String,
     startTime : String,
