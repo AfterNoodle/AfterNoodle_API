@@ -53,7 +53,7 @@ module.exports = app;
 var localDB = 'mongodb://127.0.0.1:27017/afterNoodle';
 var mlabDB = 'mongodb://songmho:abc123!@ds149603.mlab.com:49603/afternoodle';
 
-mongoose.connect(localDB, function (error, db) {
+mongoose.connect(mlabDB, function (error, db) {
     if(!error)
         console.log("connected");
     else

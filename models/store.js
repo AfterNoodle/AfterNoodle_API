@@ -5,9 +5,15 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var storeSchema = new Schema({
-    id: Number,
+    id:{
+        type : Number,
+        require: true,
+        unique : true },
     category: String,
-    title: String,
+    title: {
+        type : String,
+        index : true
+    },
     phoneNum : String,
     startTime : String,
     endTime : String,

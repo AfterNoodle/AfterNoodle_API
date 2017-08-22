@@ -5,10 +5,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var menuSchema = new Schema({
-    id : Number,
-    name : String,
+    name : {
+        type : String,
+        require : true},
     price : Number,
-    storeId : Number,
+    storeId : {
+        type : Number,
+        require : true},
 })
 
 module.exports = mongoose.model('menu', menuSchema);
