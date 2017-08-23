@@ -34,7 +34,7 @@ router.get('/detail', function (req, res, next) {
 router.post('/api/store', function(req, res){
     store.create(req.body,function (err, stores) {
         if(err) return res.status(500).send(err);
-        res.send("Store Create successfully:\n" + stores);
+        res.send(stores);
     })
 });
 
@@ -45,8 +45,8 @@ router.post('/api/store', function(req, res){
 router.get('/api/store', function (req, res) {
     store.find({}, function (err, stores) {
         if(err)           return res.status(500).send(err);
-        if(!stores.length) return res.status(404).send({ err: "User not found" });
-        res.send("store find successfully:\n" + stores);
+        if(!stores.length) return res.status(404).send({ err: "stores not found" });
+        res.send(stores);
     })
 })
 
@@ -65,7 +65,7 @@ router.get("/api/store/:title", function(req, res) {
     store.findOne({ "title" : req.params.title }, function(err, store) {
         if(err)   return res.status(500).send(err);
         if(!store) return res.status(404).send({ err: "store not found" });
-        res.send("store findOne successfully:\n" + store);
+        res.send(store);
     });
 });
 
@@ -73,7 +73,7 @@ router.get("/api/store/:title", function(req, res) {
 router.put("/api/store/:id", function(req, res) {
     store.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, store) {
         if(err) return res.status(500).send(err);
-        res.send("store findByIdAndUpdate successfully:\n" + store);
+        res.send(store);
     });
 });
 
@@ -82,7 +82,7 @@ router.put("/api/store/:id", function(req, res) {
 router.post('/api/menu', function(req, res){
     menu.create(req.body,function (err, menus) {
         if(err) return res.status(500).send(err);
-        res.send("menus Create successfully:\n" + menus);
+        res.send(menus);
     })
 });
 
@@ -92,7 +92,7 @@ router.get("/api/menu/:storeId", function(req, res) {
     store.find({ "menu" : req.params.storeId }, function(err, store) {
         if(err)   return res.status(500).send(err);
         if(!store) return res.status(404).send({ err: "menus not found" });
-        res.send("menus in the store find successfully:\n" + store);
+        res.send(store);
     });
 });
 
