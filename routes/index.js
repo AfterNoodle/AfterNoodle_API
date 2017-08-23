@@ -89,10 +89,10 @@ router.post('/api/menu', function(req, res){
 
 //get a store from store category
 router.get("/api/menu/:storeId", function(req, res) {
-    store.find({ "menu" : req.params.storeId }, function(err, store) {
+    menu.find({ "storeId" : req.params.storeId }, function(err, menu) {
         if(err)   return res.status(500).send(err);
-        if(!store) return res.status(404).send({ err: "menus not found" });
-        res.send(JSON.stringify(store));
+        if(!menu) return res.status(404).send({ err: "menus not found" });
+        res.send(JSON.stringify(menu));
     });
 });
 
