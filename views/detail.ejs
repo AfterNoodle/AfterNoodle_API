@@ -63,11 +63,14 @@
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <div class="panel-body">
+                        <%
+                            for(var i = 0; i < store.length; i++) {
+                                var menu = store[i];
+                        %>
+                        <%= menu.name%><br>
 
-                        불닭볶음면<br>
-                        족발<br>
-                        치킨<br>
-                        파스타<br>
+                        <%}
+                        %>
 
                     </div>
                 </div>

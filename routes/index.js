@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var store = require('../models/store')
-var menu = require('../models/menu')
-
+var store = require('../models/store');
+var menu = require('../models/menu');
 module.exports = router;
 
 /* GET home page. */
@@ -20,14 +19,33 @@ router.get('/next', function (req, res, next) {
     res.render('next');
 });
 
-router.get('/searchList', function (req, res, next) {
-    res.render('searchList', {
-        category : req.query.category
+router.get('/searchList', function (req, res) {
+    console.log(req.query.category);
+    store.find({ "category" : req.query.category }, function(err, store) {
+        if(err)   return res.status(500).send(err);
+        if(!store) return res.status(404).send({ err: "store not found" });
+
+        res.render('searchList', {
+            category : req.query.category,
+            store : store
+        });
+
     });
+
 });
 
 router.get('/detail', function (req, res, next) {
-    res.render('detail');
+    console.log('storeId = ' + req.query.storeId);
+
+    menu.find({ "storeId" : req.query.storeId }, function(err, store) {
+        if(err)   return res.status(500).send(err);
+        if(!store) return res.status(404).send({ err: "menus not found" });
+        console.log(store);
+
+        res.render('detail', {
+            store : store
+        });
+    });
 });
 
 //create store data
@@ -37,9 +55,6 @@ router.post('/api/store', function(req, res){
         res.send(JSON.stringify(stores));
     })
 });
-
-
-
 
 //get all store
 router.get('/api/store', function (req, res) {

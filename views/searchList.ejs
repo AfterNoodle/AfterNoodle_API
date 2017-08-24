@@ -6,20 +6,28 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
-    .category {
-        width: 300px;
-        line-height: 150px;
-        display: block;
-        margin: 4px;
+    .card_image {
+        width: 220px;
+        height: 315px;
         text-align: center;
         float: left;
-        margin-left: 50px;
-        margin-right: 50px;
         background: #ffd5c4;
+        margin-bottom: 20px;
+    }
+    .card_info {
+        margin-bottom: 20px;
+        width: 680px;
+        height:315px;
+        float: left;
+        background: #00B7FF;
     }
     #list {
-        margin-left: 10%;
-        margin-right: 10$;
+        align-content: center;
+        margin-left: 20%;
+        margin-right: 20%;
+        width: 940px;
+        height: 315px;
+        display:  block;
     }
 </style>
 <body>
@@ -35,15 +43,14 @@
     </div>
 
     <div id="list">
-    <a href="/detail"><div class="category"><%= category %></div></a>
-    <a href="/detail"><div class="category">리스트2</div></a>
-    <a href="/detail"><div class="category">리스트3</div></a>
-    <a href="/detail"><div class="category">리스트4</div></a>
-    <br>
-    <a href="/detail"><div class="category">리스트5</div></a>
-    <a href="/detail"><div class="category">리스트6</div></a>
-    <a href="/detail"><div class="category">리스트7</div></a>
-    <a href="/detail"><div class="category">리스트8</div></a>
+        <% for (var i = 0; i < store.length; i++) {
+            var title = store[i].title;
+            var id = store[i].id; %>
+            <a href="/detail?storeId=<%= id %>">
+                <div class="card_image"><%= i%></div>
+                <div class="card_info"><%= title%></div>
+            </a>
+        <% } %>
 
     </div>
 
