@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="505618ed-47e5-438a-83cd-41a63efe4a57" name="Default" comment="">
+    <list default="true" id="505618ed-47e5-438a-83cd-41a63efe4a57" name="Default" comment="web // getData implement">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,8 +32,8 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="353">
-                  <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+                <state relative-caret-position="258">
+                  <caret line="97" column="43" lean-forward="true" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
@@ -496,7 +496,7 @@
       <workItem from="1503388758400" duration="1852000" />
       <workItem from="1503390672684" duration="10514000" />
       <workItem from="1503479731319" duration="1696000" />
-      <workItem from="1503534559916" duration="5468000" />
+      <workItem from="1503534559916" duration="6003000" />
     </task>
     <task id="LOCAL-00001" summary="clone and edit jade =&gt; ejs // add web code">
       <created>1502947191325</created>
@@ -540,11 +540,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503555529559</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="web // getData implement">
+      <created>1503555555663</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1503555555663</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51788000" />
+    <option name="totallyTimeSpent" value="52323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -981,8 +988,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="258">
+          <caret line="97" column="43" lean-forward="true" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
           <folding />
         </state>
       </provider>
