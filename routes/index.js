@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var store = require('../models/store');
 var menu = require('../models/menu');
+var storeFav = require('../models/storeFav');
 module.exports = router;
 
 /* GET home page. */
@@ -110,6 +111,11 @@ router.get("/api/menu/:storeId", function(req, res) {
         res.send(JSON.stringify(menu));
     });
 });
+
+router.get("/api/fab/:userId", function (req, res) {
+
+
+})
 
 
 
