@@ -11,6 +11,10 @@ var storeFavSchema = new Schema({
     storeId : {
         type : Number,
         require : true},
+    title: {
+        type : String,
+        index : true
+    },
 })
 
 module.exports = mongoose.model('storeFav', storeFavSchema);

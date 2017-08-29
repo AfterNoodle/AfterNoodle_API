@@ -112,10 +112,25 @@ router.get("/api/menu/:storeId", function(req, res) {
     });
 });
 
-router.get("/api/fab/:userId", function (req, res) {
-
+/**
+ *  get favorite store
+ */
+router.get("/api/storeFav/:userId", function (req, res) {
+    storeFav.find({"userId": req.params.userId},function (err, storeFavs) {
+        if(err)   return res.status(500).send(err);
+        if(!storeFavs) return res.status(404).send({ err: "storeFavs not found" });
+        res.send(JSON.stringify(storeFavs));
+    });
 
 })
 
-
-
+/**
+ * add favorite store
+ */
+router.post('/api/storeFav/', function(req, res){
+    storeFav.create(req.body,function (err, storeFavs) {
+        if(err) return res.status(500).send(err);
+        if(!storeFavs) return res.status(404).send({ err: "storeFavs not found" });
+        res.send(JSON.stringify(storeFavs));
+    })
+});
