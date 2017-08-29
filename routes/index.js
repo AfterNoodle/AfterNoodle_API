@@ -134,3 +134,17 @@ router.post('/api/storeFav/', function(req, res){
         res.send(JSON.stringify(storeFavs));
     })
 });
+
+/**
+ * remove favorite store
+ */
+router.get('/api/storeFav/:userId/:storeId', function(req, res){
+    console.log(req.params.userId+"    "+req.params.storeId);
+    storeFav.remove({"userId": req.params.userId, "storeId":req.params.storeId},function (err, storeFavs) {
+        console.log("Asdfasdf");
+        console.log(req.params.userId+"    "+req.params.storeId);
+        if(err) return res.status(500).send(err);
+        if(!storeFavs) return res.status(404).send({ err: "storeFavs not found" });
+        res.send(JSON.stringify(storeFavs));
+    })
+});

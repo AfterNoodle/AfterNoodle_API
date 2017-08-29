@@ -7,10 +7,12 @@ var Schema = mongoose.Schema;
 var storeFavSchema = new Schema({
     userId : {
         type : String,
-        require : true},
+        require : true,
+        unique : true},
     storeId : {
         type : Number,
-        require : true},
+        require : true,
+        unique : true},
     title: {
         type : String,
         index : true
