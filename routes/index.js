@@ -3,6 +3,7 @@ var router = express.Router();
 var store = require('../models/store');
 var menu = require('../models/menu');
 var storeFav = require('../models/storeFav');
+var living = require('../models/living');
 module.exports = router;
 
 /* GET home page. */
@@ -146,5 +147,38 @@ router.get('/api/storeFav/:userId/:storeId', function(req, res){
         if(err) return res.status(500).send(err);
         if(!storeFavs) return res.status(404).send({ err: "storeFavs not found" });
         res.send(JSON.stringify(storeFavs));
+    })
+});
+
+/**
+ * create living post
+ */
+router.post('/api/living',function (req, res) {
+    living.create(req.body,function (err, livings) {
+        if(err) return res.status(500).send(err);
+        if(!livings) return res.status(404).send({ err: "livings not created" });
+        res.send(JSON.stringify(livings));
+    })
+});
+
+/**
+ * remove living post
+ */
+router.post('/api/living/:userId/:id',function (req, res) {
+    living.remove({'id':req.params.id,'userId':req.params.userId},function (err, livings) {
+        if(err) return res.status(500).send(err);
+        if(!livings) return res.status(404).send({ err: "livings not found" });
+        res.send(JSON.stringify(livings));
+    })
+});
+
+/**
+ * find a living post
+ */
+router.post('/api/living/:id',function (req, res) {
+    living.find({'id':req.params.id},function (err, livings) {
+        if(err) return res.status(500).send(err);
+        if(!livings) return res.status(404).send({ err: "livings not found" });
+        res.send(JSON.stringify(livings));
     })
 });
