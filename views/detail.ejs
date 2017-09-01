@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-	<title></title>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Bootstrap Theme Company Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../public/stylesheets/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <body>
 
+<div id="header">
+    <% include header.ejs%>
+</div>
+
+<div id="categoryBar">
+    <% include categoryFood.ejs %>
+</div>
+
 <div>
-
-    <div id="header">
-        <% include header.ejs%>
-    </div>
-
-    <div id="categoryBar">
-        <% include categoryFood.ejs%>
-    </div>
-
     <div id="detail">
 
         <div id="storeInfo" style="border: solid gray 1px; height: 50px;">
@@ -39,22 +43,7 @@
 
         </div>
 
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">추천메뉴</a>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body">
-
-                            크림어니언<br>
-                            허니머스타드<br>
-
-                    </div>
-                </div>
-            </div>
+        <div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -67,27 +56,11 @@
                             for(var i = 0; i < store.length; i++) {
                                 var menu = store[i];
                         %>
-                        <%= menu.name%><br>
+                        <%= menu.name%>     <%= menu.price%>원<br>
+
 
                         <%}
                         %>
-
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">사이드메뉴</a>
-                    </h4>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        소주<br>
-                        맥주<br>
-                        막걸리<br>
-                        와인<br>
-                        버드와이저<br>
 
                     </div>
                 </div>
