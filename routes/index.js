@@ -173,10 +173,21 @@ router.post('/api/living/:userId/:id',function (req, res) {
 });
 
 /**
- * find a living post
+ * find a living post in a category
  */
-router.post('/api/living/:id',function (req, res) {
-    living.find({'id':req.params.id},function (err, livings) {
+router.get('/api/living/:category/:id',function (req, res) {
+    living.find({':category':req.params.category,'id':req.params.id},function (err, livings) {
+        if(err) return res.status(500).send(err);
+        if(!livings) return res.status(404).send({ err: "livings not found" });
+        res.send(JSON.stringify(livings));
+    })
+});
+
+/**
+ * find lists of living post in a category
+ */
+router.get('/api/living/:category',function (req, res) {
+    living.find({':category':req.params.category},function (err, livings) {
         if(err) return res.status(500).send(err);
         if(!livings) return res.status(404).send({ err: "livings not found" });
         res.send(JSON.stringify(livings));
